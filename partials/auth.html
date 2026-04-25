@@ -1,0 +1,54 @@
+<!-- ── AUTH SCREEN ─────────────────────────────────────────────────────────── -->
+<div id="auth-screen" class="screen hidden">
+  <div class="auth-bg">
+    <div class="auth-orb auth-orb--1"></div>
+    <div class="auth-orb auth-orb--2"></div>
+    <div class="auth-orb auth-orb--3"></div>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-brand">
+      <span class="brand-dot"></span>
+      <h1 class="brand-name">Tracked</h1>
+    </div>
+    <p class="auth-tagline">Tu universo de series, ordenado.</p>
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">Entrar</button>
+      <button class="auth-tab" data-tab="register">Registrarse</button>
+    </div>
+
+    <!-- Login -->
+    <div id="login-form" class="auth-form">
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" id="login-email" placeholder="tu@correo.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label>Contraseña</label>
+        <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <div id="login-error" class="form-error hidden"></div>
+      <button id="login-btn" class="btn-primary">Entrar</button>
+    </div>
+
+    <!-- Register -->
+    <div id="register-form" class="auth-form hidden">
+      <div class="field">
+        <label>Usuario</label>
+        <input type="text" id="reg-username" placeholder="cinéfilo123" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label>Correo</label>
+        <input type="email" id="reg-email" placeholder="tu@correo.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label>Contraseña</label>
+        <input type="password" id="reg-password" placeholder="Mín. 8 caracteres" autocomplete="new-password" />
+      </div>
+      <div id="register-error" class="form-error hidden"></div>
+      <button id="register-btn" class="btn-primary">Crear cuenta</button>
+    </div>
+  </div>
+</div>
