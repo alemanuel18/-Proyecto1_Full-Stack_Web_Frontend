@@ -1,0 +1,57 @@
+<!-- ── APP HEADER ─────────────────────────────────────────────────────────── -->
+<header class="app-header">
+  <div class="header-content">
+    <h2 class="header-title">Mi lista</h2>
+    <button id="add-series-btn" class="btn-primary">
+      <span class="btn-icon">+</span> Nueva serie
+    </button>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters-bar">
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar series..." />
+    </div>
+
+    <div class="filter-pills">
+      <button class="pill active" data-status="">Todas</button>
+      <button class="pill" data-status="watching">Viendo</button>
+      <button class="pill" data-status="completed">Completadas</button>
+      <button class="pill" data-status="plan_to_watch">Pendientes</button>
+      <button class="pill" data-status="dropped">Abandonadas</button>
+    </div>
+
+    <select id="sort-select" class="sort-select">
+      <option value="created_at|desc">Más recientes</option>
+      <option value="title|asc">Título A-Z</option>
+      <option value="title|desc">Título Z-A</option>
+      <option value="rating|desc">Mejor valoradas</option>
+      <option value="updated_at|desc">Últimas actualizadas</option>
+    </select>
+
+    <button id="export-csv-btn" class="btn-ghost btn-sm">↓ CSV</button>
+  </div>
+</header>
+
+<!-- ── STATS BAR ───────────────────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stat">
+    <span id="stat-total"     class="stat-num">0</span>
+    <span class="stat-label">Total</span>
+  </div>
+  <div class="stat">
+    <span id="stat-watching"  class="stat-num">0</span>
+    <span class="stat-label">Viendo</span>
+  </div>
+  <div class="stat">
+    <span id="stat-completed" class="stat-num">0</span>
+    <span class="stat-label">Completadas</span>
+  </div>
+  <div class="stat">
+    <span id="stat-dropped"   class="stat-num">0</span>
+    <span class="stat-label">Abandonadas</span>
+  </div>
+</div>
