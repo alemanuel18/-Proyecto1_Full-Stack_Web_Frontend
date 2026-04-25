@@ -1,5 +1,5 @@
 // ── Config ────────────────────────────────────────────────────────────────────
-const API_URL = 'http://localhost:8080';
+const API_URL = process.env.API_URL;
 
 // ── Token helpers ─────────────────────────────────────────────────────────────
 const token = {
