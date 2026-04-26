@@ -5,6 +5,7 @@ const PARTIALS = [
   'partials/navbar.html',
   'partials/header.html',
   'partials/grid.html',
+  'partials/detail.html',
   'partials/modal-series.html',
   'partials/modal-confirm.html',
 ];
@@ -28,6 +29,7 @@ async function loadPartials() {
   const modalSeries = document.getElementById('modal-overlay');
   const modalConfirm = document.getElementById('confirm-overlay');
   const toast       = document.getElementById('toast');
+  const detailOverlay = document.getElementById('detail-overlay');
 
   // Move everything that isn't auth, modals, or toast
   [...root.childNodes].forEach(node => {

@@ -30,6 +30,7 @@ async function init() {
   setupAuthTabs();
   setupAuthForms();
   setupAppEvents();
+  setupDetailEvents();   // detail.js
 
   // Restore session if token exists
   if (token.get()) {
@@ -141,6 +142,28 @@ function setupAppEvents() {
   document.getElementById('logout-btn').addEventListener('click', () => {
     token.remove();
     state.user = null;
+    state.seriesList = [];
+    state.allSeries  = [];
+    state.page       = 1;
+    state.query      = '';
+    state.status     = '';
+    state.editingId  = null;
+
+    // Reset form fields
+    document.getElementById('login-email').value    = '';
+    document.getElementById('login-password').value = '';
+    document.getElementById('reg-username').value   = '';
+    document.getElementById('reg-email').value      = '';
+    document.getElementById('reg-password').value   = '';
+    document.getElementById('login-error').classList.add('hidden');
+    document.getElementById('register-error').classList.add('hidden');
+
+    // Always go back to login tab
+    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector('.auth-tab[data-tab="login"]').classList.add('active');
+    document.getElementById('login-form').classList.remove('hidden');
+    document.getElementById('register-form').classList.add('hidden');
+
     showScreen('auth');
   });
 
@@ -222,7 +245,7 @@ async function loadSeries() {
     state.seriesList = res.data || [];
     state.totalPages = res.total_pages || 1;
 
-    renderGrid(state.seriesList, handleEdit, handleDeletePrompt);
+    renderGrid(state.seriesList, handleEdit, handleDeletePrompt, handleCardClick);
     renderPagination(state.page, state.totalPages, p => {
       state.page = p;
       loadSeries();
@@ -309,4 +332,13 @@ function handleDeletePrompt(series) {
       showToast('Error al eliminar: ' + err.message, 'error');
     }
   });
+}
+
+// ── Card click → detail drawer ────────────────────────────────────────────────
+function handleCardClick(series) {
+  openDetail(
+    series,
+    () => handleEdit(series),
+    () => handleDeletePrompt(series),
+  );
 }

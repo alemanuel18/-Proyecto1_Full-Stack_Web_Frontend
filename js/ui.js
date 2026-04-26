@@ -86,7 +86,7 @@ function renderCard(series) {
 }
 
 // ── Grid render ───────────────────────────────────────────────────────────────
-function renderGrid(list, onEdit, onDelete) {
+function renderGrid(list, onEdit, onDelete, onCardClick) {
   const grid  = document.getElementById('series-grid');
   const empty = document.getElementById('empty-state');
 
@@ -103,6 +103,7 @@ function renderGrid(list, onEdit, onDelete) {
     card.style.animationDelay = `${i * 35}ms`;
     card.querySelector('.btn-edit').addEventListener('click', (e) => { e.stopPropagation(); onEdit(s); });
     card.querySelector('.btn-delete').addEventListener('click', (e) => { e.stopPropagation(); onDelete(s); });
+    card.addEventListener('click', () => { if (onCardClick) onCardClick(s); });
     grid.appendChild(card);
   });
 }

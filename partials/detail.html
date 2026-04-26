@@ -1,0 +1,56 @@
+<!-- ── DRAWER: DETALLE DE SERIE ────────────────────────────────────────────── -->
+<div id="detail-overlay" class="detail-overlay hidden">
+  <div class="detail-drawer" id="detail-drawer">
+
+    <!-- Close -->
+    <button class="detail-close" id="detail-close">✕</button>
+
+    <!-- Cover + status -->
+    <div class="detail-hero">
+      <div class="detail-cover-wrap">
+        <img id="detail-cover" src="" alt="" class="detail-cover hidden" />
+        <div id="detail-cover-placeholder" class="detail-cover-placeholder">📺</div>
+      </div>
+      <span id="detail-status-badge" class="card-status"></span>
+    </div>
+
+    <!-- Info -->
+    <div class="detail-body">
+      <h2 id="detail-title" class="detail-title"></h2>
+      <p  id="detail-genre" class="detail-genre"></p>
+
+      <!-- Stats row -->
+      <div class="detail-stats">
+        <div class="detail-stat">
+          <span class="detail-stat-label">Rating</span>
+          <span id="detail-rating" class="detail-stat-value"></span>
+        </div>
+        <div class="detail-stat">
+          <span class="detail-stat-label">Episodios</span>
+          <span id="detail-episodes" class="detail-stat-value"></span>
+        </div>
+        <div class="detail-stat">
+          <span class="detail-stat-label">Agregada</span>
+          <span id="detail-created" class="detail-stat-value"></span>
+        </div>
+        <div class="detail-stat">
+          <span class="detail-stat-label">Actualizada</span>
+          <span id="detail-updated" class="detail-stat-value"></span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div id="detail-desc-wrap" class="detail-desc-wrap hidden">
+        <h4 class="detail-section-title">Sinopsis</h4>
+        <p id="detail-description" class="detail-description"></p>
+      </div>
+
+      <!-- Actions -->
+      <div class="detail-actions">
+        <button class="btn-primary" id="detail-edit-btn">✎ Editar</button>
+        <button class="btn-danger"  id="detail-delete-btn">Eliminar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
