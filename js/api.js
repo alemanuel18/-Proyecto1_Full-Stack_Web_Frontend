@@ -1,5 +1,5 @@
 // ── Config ────────────────────────────────────────────────────────────────────
-const API_URL = 'http://localhost:8080';
+const API_URL = CONFIG.API_URL;
 
 // ── Token helpers ─────────────────────────────────────────────────────────────
 const token = {
