@@ -2,7 +2,7 @@
 
 Interfaz web para gestionar tu lista de series. Construida en HTML, CSS y JavaScript vanilla, servida con nginx dentro de Docker.
 
-**Backend repo:** _[agregar link aquí]_
+**Backend repo:** [Backend](https://github.com/alemanuel18/Proyecto1_Full-Stack_Web_Backend.git)
 
 ---
 
