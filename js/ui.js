@@ -53,7 +53,7 @@ function renderCard(series) {
 
   const statusLabel = STATUS_LABEL[series.status] || series.status;
 
-  const coverHTML = series.cover_url
+  const coverHTML = (series.cover_url && series.cover_url !== 'null')
     ? `<img class="card-cover" src="${series.cover_url}" alt="${escHtml(series.title)}" loading="lazy" />`
     : `<div class="card-cover-placeholder">📺</div>`;
 
@@ -71,7 +71,7 @@ function renderCard(series) {
     <span class="card-status status--${series.status}">${statusLabel}</span>
     <div class="card-body">
       <div class="card-title">${escHtml(series.title)}</div>
-      <div class="card-genre">${escHtml(series.genre || '—')}</div>
+      <div class="card-genre">${escHtml(series.genre != null ? series.genre : '—')}</div>
       <div class="card-meta">
         ${ratingHTML}
         <div class="card-actions">
@@ -160,7 +160,7 @@ function openModal(series = null) {
     document.getElementById('field-episodes').value    = series.episodes    ?? '';
     document.getElementById('field-description').value = series.description || '';
 
-    if (series.cover_url) {
+    if (series.cover_url && series.cover_url !== 'null') {
       const preview = document.getElementById('cover-preview');
       preview.src = series.cover_url;
       preview.classList.remove('hidden');

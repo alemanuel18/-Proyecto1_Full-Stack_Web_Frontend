@@ -51,6 +51,14 @@ body {
 .screen { min-height: 100vh; }
 .hidden { display: none !important; }
 
+/* Auth screen: full viewport flex container to center the card */
+#auth-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 /* ── Auth ───────────────────────────────────────────────────────────────── */
 .auth-bg {
   position: fixed; inset: 0; z-index: 0;
@@ -101,18 +109,12 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 
-  /* Center vertically */
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 0;
-
-  animation: slideUp 0.5s cubic-bezier(0.16,1,0.3,1) both;
+  animation: slideUp 0.4s cubic-bezier(0.16,1,0.3,1) both;
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(calc(-50% + 24px)); }
-  to   { opacity: 1; transform: translateY(-50%); }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .auth-brand {

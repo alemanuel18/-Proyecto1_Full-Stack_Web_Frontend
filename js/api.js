@@ -1,5 +1,5 @@
 // ── Config ────────────────────────────────────────────────────────────────────
-const API_URL = "http://localhost:8080";
+const API_URL = 'http://localhost:8080';
 
 // ── Token helpers ─────────────────────────────────────────────────────────────
 const token = {
@@ -16,10 +16,20 @@ async function apiFetch(path, options = {}) {
 
   const res = await fetch(`${API_URL}${path}`, { ...options, headers });
 
-  // 204 No Content — no body
   if (res.status === 204) return null;
 
-  const data = await res.json();
+  // Read raw text first so we can log it on parse errors
+  const rawText = await res.text();
+  console.log(`[API] ${options.method || 'GET'} ${path} → ${res.status} | body: ${rawText.slice(0, 200)}`);
+
+  let data;
+  try {
+    data = JSON.parse(rawText);
+  } catch (e) {
+    console.error('[API] JSON parse failed. Raw:', rawText);
+    throw new Error('Respuesta inválida del servidor: ' + rawText.slice(0, 80));
+  }
+
   if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
   return data;
 }
