@@ -130,4 +130,33 @@ El `Dockerfile` regenera `config.js` con la nueva URL en cada build.
 
 ## Screenshot
 
-_[Agregar screenshot de la app funcionando]_
+## Screenshot
+
+_[Login]_
+
+<img width="1920" height="1038" alt="Login" src="https://github.com/user-attachments/assets/2e82d150-a91f-46d9-8c82-a3c74dc98588" />
+
+_[Filtros]_
+
+<img width="1920" height="1038" alt="Filtro1" src="https://github.com/user-attachments/assets/8c2fa236-c5f6-4e4c-8027-fbf21d9dea3b" />
+
+<img width="1920" height="1038" alt="Filtro2" src="https://github.com/user-attachments/assets/b2cf98bb-2c95-462f-ae1b-9183c0e768c7" />
+
+<img width="1920" height="1038" alt="Filtro3" src="https://github.com/user-attachments/assets/e383a9bc-a614-4bdf-b9df-0086b584b4a9" />
+
+<img width="1920" height="1038" alt="Filtro4" src="https://github.com/user-attachments/assets/f7c33929-3944-4e29-b3fe-917ba5b07480" />
+
+_[Crear Serie]_
+
+<img width="1920" height="1038" alt="Crear1" src="https://github.com/user-attachments/assets/3e212252-a533-4bad-ab56-c38178b2f080" />
+
+<img width="1920" height="1038" alt="Crear2" src="https://github.com/user-attachments/assets/91c635b2-9cab-43a8-a673-d2e57706f477" />
+
+_[Eliminar Serie]_
+
+<img width="1920" height="1038" alt="Eliminar" src="https://github.com/user-attachments/assets/fa6c232e-00a1-494d-8961-300ce27bdbe6" />
+
+
+_[Detalle Serie]_
+
+<img width="1920" height="1038" alt="Detalle" src="https://github.com/user-attachments/assets/d807d3e4-8310-4552-b8cf-3facacfbc3dc" />
