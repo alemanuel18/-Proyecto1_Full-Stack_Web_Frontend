@@ -9,7 +9,7 @@ ARG API_URL=http://localhost:8080
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy our config
-COPY nginx.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/templates/nginx.conf.template
 
 # Copy all frontend files
 COPY . /usr/share/nginx/html/
