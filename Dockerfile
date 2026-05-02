@@ -8,9 +8,6 @@ ARG API_URL=http://localhost:8080
 # Remove default nginx config
 RUN rm /etc/nginx/conf.d/default.conf
 
-# Copy our config
-COPY nginx.conf /etc/nginx/templates/nginx.conf.template
-
 # Copy all frontend files
 COPY . /usr/share/nginx/html/
 
@@ -18,6 +15,9 @@ COPY . /usr/share/nginx/html/
 RUN echo "const CONFIG = { API_URL: '${API_URL}' };" \
     > /usr/share/nginx/html/js/config.js
 
+# Copy our config
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
+
 EXPOSE 80
 
-CMD ["/bin/sh", "-c", "envsubst '$PORT' < /etc/nginx/templates/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "sed -i \"s/listen 80/listen ${PORT:-80}/g\" /etc/nginx/conf.d/nginx.conf && nginx -g 'daemon off;'"]
